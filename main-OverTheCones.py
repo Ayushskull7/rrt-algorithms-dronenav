@@ -92,12 +92,17 @@ cones = [
     for bbox in detection["bbox"]
 ]
 
-X_dimensions = np.array([(0, 1280), (0, 1280)])
+dim_x_min = int(input("Enter the minimum X dimension: "))
+dim_x_max = int(input("Enter the maximum X dimension: "))
+dim_y_min = int(input("Enter the minimum Y dimension: "))
+dim_y_max = int(input("Enter the maximum Y dimension: "))
+
+X_dimensions = np.array([(dim_x_min, dim_x_max), (dim_y_min, dim_y_max)])
 
 all_obstacles = np.array(obstacles)
 
-x_init = (1280, 0)
-x_goal = (400, 1000)
+x_init = (int(input("Enter the X coordinate for the initial point: ")), int(input("Enter the Y coordinate for the initial point: ")))
+x_goal = (int(input("Enter the X coordinate for the goal point: ")), int(input("Enter the Y coordinate for the goal point: ")))
 
 cone1 = cones[0]
 cone2 = cones[1]
